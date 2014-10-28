@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @brain.name
+
+= link_to 'Edit', edit_brain_path(@brain)
+\|
+= link_to 'Back', brains_path

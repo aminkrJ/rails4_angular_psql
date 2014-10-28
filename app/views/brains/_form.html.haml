@@ -1,0 +1,13 @@
+= form_for @brain do |f|
+  - if @brain.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@brain.errors.count, "error")} prohibited this brain from being saved:"
+      %ul
+        - @brain.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'
