@@ -1,0 +1,21 @@
+%h1 Listing panes
+
+%table
+  %tr
+    %th Name
+    %th Settings
+    %th
+    %th
+    %th
+
+  - @panes.each do |pane|
+    %tr
+      %td= pane.name
+      %td= pane.settings
+      %td= link_to 'Show', pane
+      %td= link_to 'Edit', edit_pane_path(pane)
+      %td= link_to 'Destroy', pane, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pane', new_pane_path

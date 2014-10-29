@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @pane.name
+%p
+  %b Settings:
+  = @pane.settings
+
+= link_to 'Edit', edit_pane_path(@pane)
+\|
+= link_to 'Back', panes_path

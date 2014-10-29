@@ -11,15 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028021548) do
+ActiveRecord::Schema.define(version: 20141029024708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+  enable_extension "postgis"
 
-  create_table "brains", force: true do |t|
+  create_table "panes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "points", force: true do |t|
+    t.string   "title"
+    t.decimal  "lat",        precision: 9, scale: 6
+    t.decimal  "lon",        precision: 9, scale: 6
+    t.integer  "pane_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spatial_ref_sys", primary_key: "srid", force: true do |t|
+    t.string  "auth_name", limit: 256
+    t.integer "auth_srid"
+    t.string  "srtext",    limit: 2048
+    t.string  "proj4text", limit: 2048
+  end
+
+  add_foreign_key "points", "panes", name: "points_pane_id_fk"
 
 end
