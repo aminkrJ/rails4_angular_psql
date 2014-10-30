@@ -1,0 +1,1 @@
+dictionary = angular.module('dictionary', [])
