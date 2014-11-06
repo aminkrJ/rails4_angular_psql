@@ -14,6 +14,9 @@ gem 'haml-rails'
 gem 'pry'
 gem 'foreigner'
 gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'better_errors'
+gem 'meta_request'
 
 group :development, :test do
   gem 'rspec'
