@@ -1,7 +1,10 @@
-%div.container-fluid{"ng-app" => "dictionary"}
-  %div.panel-body
+.container-fluid
+  .panel-body
     %form.form-inline
-      %div.form-group
+      .form-group
         %input.form-control{type: "text", placeholder: "Enter pane name", autofocus:true, "ng-model" => "name"}
     %h5
       %small{"ng-if" => "name"} $: {{name}}
+
+.view-container
+  .view-frame.animate-view{"ng-view" => true}
