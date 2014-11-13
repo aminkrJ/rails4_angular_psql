@@ -1,3 +1,17 @@
 %header.row
-  %h1.text-center.col-md-6.col-md-offset-3
-    Find Panes
+  %h1.text-center.col-md-6.col-md-offset-3 Find Pane
+%section
+  %form
+    .form-group.col-md-6.col-md-offset-3
+      %input.form-control{type: "text", autofocus: true,  placeholder:"e.x pane", "ng-model" => 'keywords', name: "keywords"}
+    .form-group.col-md-6.col-md-offset-3.text-center
+      %button.btn.btn-primary.btn-lg{"ng-click" => "search(keywords)"} Search
+
+%section.row{"ng-if" => "panes"}
+  %ul.list-unstyled
+    %li{"ng-repeat" => "pane in panes"}
+      %section.well.col-md-6.col-md-offset-3
+        %h3.col-md-6.text-left{style: "margin-top:0"} {{pane.name}}
+        .col-md-6.text-right
+          %button.btn.btn-info Edit
+          %button.btn.btn-danger Delete
