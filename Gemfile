@@ -21,6 +21,8 @@ gem 'fuubar'
 gem 'database_cleaner'
 
 group :development, :test do
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
