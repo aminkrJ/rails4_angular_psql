@@ -17,6 +17,7 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'better_errors'
 gem 'meta_request'
+gem 'fuubar'
 
 group :development, :test do
   gem 'rspec'
