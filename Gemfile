@@ -18,6 +18,7 @@ gem 'angular-rails-templates'
 gem 'better_errors'
 gem 'meta_request'
 gem 'fuubar'
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'rspec'
