@@ -19,6 +19,7 @@ gem 'better_errors'
 gem 'meta_request'
 gem 'fuubar'
 gem 'database_cleaner'
+gem 'pg_search'
 
 group :development, :test do
   gem 'guard'
