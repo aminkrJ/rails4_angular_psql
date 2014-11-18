@@ -1,8 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :pane do
-    name "MyString"
+    name "MyPane"
     settings ""
   end
 end

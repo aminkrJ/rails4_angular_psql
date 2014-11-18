@@ -1,7 +1,16 @@
-app = angular.module('dictionary', ['ngRoute', 'templates', 'controllers'])
+app = angular.module('dictionary', [
+  'ngRoute'
+  'templates'
+  'ngResource'
+  'controllers'
+])
 
 app.config(['$routeProvider',
-  ($routeProvider) -> $routeProvider.when('/', {templateUrl: "index.html", controller: 'PanesController'})
+  ($routeProvider) ->
+    $routeProvider.when('/',
+      templateUrl: "index.html"
+      controller: 'PanesController'
+    )
 ])
 
 panes = [
@@ -16,8 +25,8 @@ panes = [
 ]
 
 controllers = angular.module('controllers', [])
-controllers.controller("PanesController", ['$scope', '$routeParams', '$location',
-  ($scope,$routeParams,$location) ->
+controllers.controller("PanesController", ['$scope', '$routeParams', '$location', '$resource'
+  ($scope,$routeParams,$locationi,$resource) ->
     $scope.search = (keywords) ->  $location.path("/").search('keywords', keywords)
 
     if $routeParams.keywords
