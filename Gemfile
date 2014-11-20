@@ -8,7 +8,6 @@ gem 'coffee-rails',     github: "rails/coffee-rails"
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'spring',           group: :development
 gem 'haml'
 gem 'haml-rails'
 gem 'pry'
@@ -31,6 +30,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'teaspoon'
   gem 'phantomjs'
+  gem 'spring'
 end
 
 # Use Capistrano for deployment

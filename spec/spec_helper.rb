@@ -10,6 +10,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.filter_run :focus => true
   config.use_transactional_fixtures = true
 
   Capybara.register_driver :selenium do |app|
