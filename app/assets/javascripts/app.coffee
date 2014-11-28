@@ -31,7 +31,7 @@ controllers.controller("PanesController", ['$scope', '$routeParams', '$location'
 
     if $routeParams.keywords
       keywords = $routeParams.keywords.toLowerCase()
-      $scope.panes = panes.filter (pane)-> pane.name.toLowerCase().indexOf(keywords) != -1
+      $scope.panes = panes.filter (pane) -> pane.name.toLowerCase().indexOf(keywords) != -1
     else
       $scope.panes = []
 ])
