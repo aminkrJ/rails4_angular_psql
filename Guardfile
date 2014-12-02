@@ -10,7 +10,12 @@ guard :rspec, cmd: 'spring rspec -f doc' do
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
 
-  # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml|slim)$})     { |m| "spec/features/#{m[1]}_spec.rb" }
 end
 
+
+guard :teaspoon do
+  watch(%r{^app/assets/javascripts/(.+).js}) { |m| "#{m[1]}_spec" }
+
+  watch(%r{^spec/javascripts/(.*)})
+end

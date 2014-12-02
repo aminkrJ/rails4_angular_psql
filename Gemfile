@@ -29,6 +29,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'teaspoon'
+  gem 'guard-teaspoon'
   gem 'phantomjs'
   gem 'spring'
 end
