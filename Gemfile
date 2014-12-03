@@ -19,6 +19,7 @@ gem 'meta_request'
 gem 'fuubar'
 gem 'database_cleaner'
 gem 'pg_search'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'guard'
