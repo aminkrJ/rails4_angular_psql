@@ -16,22 +16,23 @@ app.config(['$routeProvider',
 panes = [
   {
     id: 1
-    name: 'pane 1'
+    name: 'pane1'
   },
   {
-    id: 2
-    name: 'pane 2'
+    id: 4
+    name: 'pane2'
   }
 ]
 
 controllers = angular.module('controllers', [])
 controllers.controller("PanesController", ['$scope', '$routeParams', '$location', '$resource'
-  ($scope,$routeParams,$locationi,$resource) ->
+  ($scope,$routeParams,$location,$resource) ->
+    debugger
     $scope.search = (keywords) ->  $location.path("/").search('keywords', keywords)
+    Pane = $resource('/panes/:paneId', { paneId: "@id", format: 'json' })
 
     if $routeParams.keywords
-      keywords = $routeParams.keywords.toLowerCase()
-      $scope.panes = panes.filter (pane) -> pane.name.toLowerCase().indexOf(keywords) != -1
+      Pane.query(keywords: $routeParams.keywords, (results)-> $scope.panes = results)
     else
       $scope.panes = []
 ])
